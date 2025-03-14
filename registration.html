@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Table</title>
+        <link rel="stylesheet" href="cssfiles3.css">
+        <script type="text/javascript">
+            function setStyle(x) {
+                document.getElementById(x).style.background = "yellow";
+            }
+            function unsetStyle(x) {
+        document.getElementById(x).style.background = "white";
+    }
+
+    function buttonEnter(x) {
+        x.style.background = "lightblue";
+    }
+
+    function buttonLeave(x) {
+        x.style.background = "";
+    }
+            function checkform(event) {
+    event.preventDefault();
+    var registrationform = document.getElementById('registration');
+    var name = document.getElementById("name").value;
+    var address = document.getElementById("address").value;
+    var email = document.getElementById("email").value;
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var phone = document.getElementById("phone").value;
+    if (!(registrationform.checkValidity())) {
+        alert('Please fill out the valid information.');
+        return ;
+    }
+    // submit the form
+    registrationform.submit();
+    window.location.href = "seller.html";
+}
+
+        </script>  
+    </head> 
+    <body>
+        <div class="style">
+            <img src="logo.png" class="logo"> 
+        </div>
+        <section> 
+            <div class="web">
+                <form id="registration" onsubmit="return checkform(event);">
+                    <h1>Car Seller Registration</h1>
+                    <label for="name">Name:</label> 
+                    <input type="text" id="name" required placeholder="your name" onfocus="setStyle('name')" onblur="unsetStyle('name')"><br>
+                    <label for="address">Address:</label> 
+                    <input type="text" id="address" required onfocus="setStyle('address')" onblur="unsetStyle('address')"><br>
+                    <label for="email">Email:</label> 
+                    <input type="email" id="email" required placeholder="your email" onfocus="setStyle('email')" onblur="unsetStyle('email')"><br>
+                    <label for="username">Username:</label> 
+                    <input type="text" id="username" required onfocus="setStyle('username')" onblur="unsetStyle('username')"><br>
+                    <label for="password">Password:</label> 
+                    <input type="password" id="password" required onfocus="setStyle('password')" onblur="unsetStyle('password')"><br>
+                    <label for="phone">Phone Number:</label> 
+                    <input type="tel" id="phone" required onfocus="setStyle('phone')" onblur="unsetStyle('phone')"><br>
+                    <button type="submit" class="button" style="margin-left:50px" onmouseenter="buttonEnter(this)" onmouseleave="buttonLeave(this)"> Register</button>
+                    
+                </form> 
+            </div>
+        </section> 
+    </body>
+</html>
+

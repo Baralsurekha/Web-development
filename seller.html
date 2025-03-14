@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>seller login</title>
+        <link rel="stylesheet" href="cssfiles3.css">
+        <script type="text/javascript">
+            function setStyle(x) {
+                document.getElementById(x).style.background = "yellow";
+            }
+            function unsetStyle(x) {
+        document.getElementById(x).style.background = "white";
+    }
+
+    function buttonEnter(x) {
+        x.style.background = "lightblue";
+    }
+
+    function buttonLeave(x) {
+        x.style.background = "";
+    }
+   
+    </script>
+    </head>
+    <body>
+        <div class="style">
+            <img src="logo.png" alt="logo" class="logo"> 
+                <h1>Seller page</h1>
+                <div class="login">
+                <h2> Login here</h2>
+                    <form id="login" class="input-login">
+                        <input type="text" class="field" placeholder="Email Id" required>
+                        <input type="password" class="field" placeholder="Enter Password" required>
+                        <input type="checkbox" class="checkbox"><span>Remember Password</span>
+                        <button type="submit" class="button"> Log In</button>
+                    </form>
+                </div>
+                <div class="addition" >
+                    <h3> Add Car</h3>
+                    <form id="addition" class="input-addition">
+                    <label for="make">Make:</label> 
+                    <input type="text" id="make" required onfocus="setStyle('make')" onblur="unsetStyle('make')"><br>
+                    <label for="model">Model:</label> 
+                    <input type="text" id="model" required onfocus="setStyle('model')" onblur="unsetStyle('model')"><br>
+                    <label for="year">Year:</label> 
+                    <input type="tel" id="year" required onfocus="setStyle('year')" onblur="unsetStyle('year')"><br>
+                    <label for="milage">Milage:</label> 
+                    <input type="text" id="milage" required onfocus="setStyle('milage')" onblur="unsetStyle('milage')"><br>
+                    <label for="location">Location:</label> 
+                    <input type="text" id="location" required onfocus="setStyle('location')" onblur="unsetStyle('location')"><br>
+                    <label for="price">Price:</label> 
+                    <input type="tel" id="price" required onfocus="setStyle('price')" onblur="unsetStyle('price')"><br>
+                    <button type="submit" class="button"> Submit</button>
+                    </form>
+                </div>
+    </body>
+</html>

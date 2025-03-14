@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> Types of car</title>
+        <link rel="stylesheet" href="cssfiles3.css">
+        <script type="text/javascript">
+            function setStyle(x) {
+                document.getElementById(x).style.background = "yellow";
+            }
+            function unsetStyle(x) {
+        document.getElementById(x).style.background = "white";
+    }
+
+    function buttonEnter(x) {
+        x.style.background = "lightblue";
+    }
+
+    function buttonLeave(x) {
+        x.style.background = "";
+    }
+   function openlink() {
+    var model= document.getElementById("model").value;
+    var link="";
+    if (model=='bmw') {
+        link = "bmw.html";
+    } else if (model== "hyundai") {
+        link= "hyundai.html";
+    } else if (model== "mercedes") {
+        link= "mercedes.html";
+   } else {
+    alert ("invalid model");
+    return false;
+   }  
+   window.open(link);
+   return false;
+       }
+    </script>
+    </head>
+    <body>
+        <div class="style">
+            <img src="logo.png" class="logo"> 
+            <h1> Find Your Car</h1> 
+            <div class="md">
+            <form>
+                <label for="model"> Model:</label> 
+                <select id="model" name="model"> 
+                    <option value="select model"> Select model</option>
+                    <option value="bmw"> BMW</option>
+                    <option value="hyundai" > Hyundai</option>
+                    <option value="mercedes" > Mercedes</option> 
+                </select> <br>
+                    <label for="location">Location:</label> 
+                    <input type="text" id="location" required onfocus="setStyle('location')" onblur="unsetStyle('location')"><br>
+                    <input type="submit" value="Submit" onclick="openlink()">
+            </form> </div>
+        </div>
+    </body>
+</html>
